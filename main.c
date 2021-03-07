@@ -5,12 +5,15 @@ void knapSackItemsIncluded(int W, int K[][W+1], int weights[], int values[], int
 
 
 int main() {
-    int wt[] = { 5, 5, 3, 4, 7};
-    int val[] = { 15,15, 8, 13, 7};
-    int W = 20;
+    // int wt[] = { 5, 5, 3, 4, 7};
+    // int val[] = { 15,15, 8, 13, 7};
+    // int W = 20;
     // int wt[] = { 1, 2, 4};
     // int val[] = { 7, 5, 3};
-    // int W = 3;
+
+    int wt[] = { 5, 5, 3, 4, 7 };
+    int val[] = { 15, 15, 8, 13, 7};
+    int W = 20;
     int n = sizeof(val) / sizeof(val[0]);
 
     int K[n+1][W+1];
@@ -59,9 +62,7 @@ void knapSackItemsIncluded(int W, int K[][W+1], int weights[], int values[], int
 
     // Print items included
     printf("Items included (weight, value):\n");
-    for(i = 0; i < ctr; i++) {
-        printf("%d: (%d, %d)\n", i+1, weights[i], values[i]);
+    for(i = ctr-1; i >= 0; i--) {
+        printf("Item %d: (%d, %d)\n", arr[i] + 1, weights[arr[i]], values[arr[i]]);
     }
 }
- 
-
