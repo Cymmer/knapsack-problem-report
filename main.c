@@ -5,12 +5,9 @@ void knapSackItemsIncluded(int W, int K[][W+1], int weights[], int values[], int
 
 
 int main() {
-    // int wt[] = { 5, 5, 3, 4, 7};
-    // int val[] = { 15,15, 8, 13, 7};
-    // int W = 20;
-    // int wt[] = { 1, 2, 4};
-    // int val[] = { 7, 5, 3};
-
+//  int wt[] = { 1, 2, 4};
+//  int val[] = { 7, 5, 3};
+//  int W = 3;
     int wt[] = { 5, 5, 3, 4, 7 };
     int val[] = { 15, 15, 8, 13, 7};
     int W = 20;
@@ -27,7 +24,7 @@ int knapSackBestValue(int W, int K[][W+1], int weights[], int values[], int n) {
     int i, j;
     for (i = 0; i <= n; i++) {
         for (j = 0; j <= W; j++) {
-            if (i == 0 || j == 0)
+            if (i == 0 || j == 0) 
                 K[i][j] = 0;
             else {
                 // Consider not picking this element
@@ -52,7 +49,7 @@ void knapSackItemsIncluded(int W, int K[][W+1], int weights[], int values[], int
     int i,j;
 
     int itemIndex;
-    for(int i = n; i > 0; i--) {
+    for(i = n; i > 0; i--) {
         if(K[i][W] != K[i-1][W]) {
             itemIndex = i - 1;
             arr[ctr++] = itemIndex;
